@@ -33,34 +33,33 @@ yarn watch
 
 
 Install dependencies:
-```sh
+```
 yarn
 ```
 
 Publish handpose locally:
-```sh
+```
 yarn build && yarn yalc publish
 ```
 
 Cd into the demos and install dependencies:
 
-```sh
-cd demos
+```
 yarn
 ```
 
 Link the local handpose to the demos:
-```sh
+```
 yarn yalc link @tensorflow-models/handpose
 ```
 
 Start the dev demo server:
-```sh
+```
 yarn watch
 ```
 
 To get future updates from the handpose source code:
-```
+```sh
 # cd up into the handpose directory
 cd ../
 yarn build && yarn yalc push
