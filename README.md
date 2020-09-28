@@ -19,7 +19,7 @@ $ yarn add @tensorflow/tfjs-backend-webgl # or @tensorflow/tfjs-backend-wasm
 
 Install dependencies and prepare the build directory:
 
-```sh
+```
 yarn
 ```
 
