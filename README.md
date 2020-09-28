@@ -6,10 +6,15 @@ This demo shows how to use the handpose model to detect hands in a video stream.
 
 ## Setup
 
-cd into the demos folder:
+Via npm:
 
+Using yarn:
 ```sh
-cd handpose/demo
+$ yarn add @tensorflow-models/handpose
+$ yarn add @tensorflow/tfjs-core, @tensorflow/tfjs-converter
+$ yarn add @tensorflow/tfjs-backend-webgl # or @tensorflow/tfjs-backend-wasm
+```
+
 ```
 
 Install dependencies and prepare the build directory:
@@ -26,10 +31,6 @@ yarn watch
 
 ## If you are developing handpose locally, and want to test the changes in the demos
 
-Cd into the handpose folder:
-```sh
-cd handpose
-```
 
 Install dependencies:
 ```sh
