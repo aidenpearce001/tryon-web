@@ -25,7 +25,7 @@ yarn
 
 To watch files for changes, and launch a dev server:
 
-```sh
+```
 yarn watch
 ```
 
