@@ -77,8 +77,8 @@
 
       // Camera position
       camera = new THREE.PerspectiveCamera( 40, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
-      camera.position.set( 30, 30, 100 );
-
+      camera.position.set( 0, 90, 0);
+      // camera.position.lerp(0,0, 0.03);
       // Object's mesh
       var mesh = new THREE.Mesh(
         new THREE.BoxGeometry(20, 20, 20),
@@ -100,9 +100,10 @@
       controls.enableZoom = false;
 
       //Load 3d Model
+      var model;
       var loader = new GLTFLoader()
       loader.load( 'out.glb', function ( gltf ) {
-
+        model = gltf.scene;
         scene.add( gltf.scene );
 
         }, undefined, function ( error ) {
@@ -121,17 +122,29 @@
 
       }
 
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      var defaultRotation = new THREE.Quaternion();
+
       function animate() {
 
         requestAnimationFrame( animate );
-
+        // mesh.rotateY( 0.01 );
+        async function demo() {
+          console.log('Taking a break...');
+          model.rotation.y += 1;
+          model.rotation.x += 1;
+          await sleep(2000);
+        };
+        demo();
+        var angle = defaultRotation.angleTo( mesh.quaternion );
+        
+        console.log( THREE.Math.radToDeg( angle ) );
         renderer.render( scene, camera );
         // stats.update();
 
-      }
-
-      function render() {
-          renderer.render(scene, camera)
       }
 
       // Show FPS
