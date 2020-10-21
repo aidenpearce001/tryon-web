@@ -13,7 +13,8 @@
     "@tensorflow/tfjs-backend-wasm": "2.1.0",
     "@tensorflow/tfjs-backend-webgl": "^2.4.0",
     "@tensorflow/tfjs-converter": "^2.4.0",
-    "@tensorflow/tfjs-core": "^2.4.0"
+    "@tensorflow/tfjs-core": "^2.4.0",
+    "http-server": "^0.12.3"
   },
   "scripts": {
     "watch": "cross-env NODE_ENV=development parcel index.html --no-hmr ",

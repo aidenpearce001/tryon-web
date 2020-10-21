@@ -56,6 +56,9 @@ const stats = new Stats();
 stats.showPanel(0);
 document.body.appendChild(stats.dom);
 
+let timestep = 0;
+let globalKeypoints = [];
+
 if (renderPointcloud) {
   state.renderPointcloud = true;
 }
@@ -77,35 +80,31 @@ function setupDatGui() {
   }
 }
 
+import image from "./public/obj.jpg";
 function drawPoint(y, x, r) {
+
   ctx.beginPath();
-  ctx.arc(x, y, r, 0, 2 * Math.PI);
+  // ctx.arc(x, y, r, 0, 2 * Math.PI);
+  let img_component = document.createElement("img");
+  img_component.src = image;
+  img_component.setAttribute("height",10);
+  img_component.setAttribute("width",10);
+  ctx.drawImage(img_component, x, y, 30, 30);
   ctx.fill();
 }
 
 function drawKeypoints(keypoints) {
+  timestep += 1;
   let keypointsArray = keypoints;
-
+  if (timestep % 5 !== 0) {
+    keypointsArray = globalKeypoints;
+  } else {
+    globalKeypoints = keypointsArray;
+  }
 
 
   keypointsArray = keypointsArray.slice(13,16);
-  let loggingZ = keypointsArray.map(item => item[2])
-  console.log("RESULT:",loggingZ);
-
-  // let ringKeypoint = [0,0,0];
-  //
-  // for (let keypoint of keypointsArray) {
-  //   for (let index in keypoint) {
-  //     ringKeypoint[index] += keypoint[index];
-  //   }
-  // }
-  // for (let index in ringKeypoint) {
-  //   ringKeypoint[index] /= keypointsArray.length;
-  // }
-  //
-  // console.log("RING KEYPOINT:",ringKeypoint);
-  //
-  //
+  
   console.log("KEYPOINTS:",keypointsArray);
 
   for (let i = 0; i < keypointsArray.length; i++) {

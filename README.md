@@ -10,8 +10,8 @@ Via npm:
 
 Using yarn:
 ```sh
-$ yarn add @tensorflow-models/handpose
-$ yarn add @tensorflow/tfjs-core, @tensorflow/tfjs-converter
+$ 
+$ yarn add @tensorflow/tfjs-coryarn add @tensorflow-models/handposee, @tensorflow/tfjs-converter
 $ yarn add @tensorflow/tfjs-backend-webgl # or @tensorflow/tfjs-backend-wasm
 ```
 
