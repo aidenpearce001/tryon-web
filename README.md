@@ -10,7 +10,7 @@ Via npm:
 
 Using yarn:
 ```sh
-$ 
+$ yarn add three
 $ yarn add @tensorflow/tfjs-coryarn add @tensorflow-models/handposee, @tensorflow/tfjs-converter
 $ yarn add @tensorflow/tfjs-backend-webgl # or @tensorflow/tfjs-backend-wasm
 ```
